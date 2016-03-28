@@ -1,6 +1,8 @@
 retry-after
 ===========
 
+[![Build Status](https://travis-ci.org/jwilm/retry-after.svg?branch=master)](https://travis-ci.org/jwilm/retry-after)
+
 Retry-After header for [Hyper][]. Implemented according to [RFC7231-7.1.3][].
 
 ## Usage
