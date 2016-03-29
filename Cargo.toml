@@ -4,9 +4,7 @@ version = "0.1.0"
 authors = ["Joe Wilm <joe@jwilm.com>"]
 
 [dependencies.chrono]
-version = "0.2"
-git = "https://github.com/lifthrasiir/rust-chrono"
-rev = "ada7aeda72bd4b6e8439419b36a9de192286a94c"
+version = "0.2.21"
 
 [dependencies.hyper]
 version = "0.7"
