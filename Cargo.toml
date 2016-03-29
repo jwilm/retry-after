@@ -2,6 +2,11 @@
 name = "retry-after"
 version = "0.1.0"
 authors = ["Joe Wilm <joe@jwilm.com>"]
+description = "Retry-After header for Hyper's header module"
+license = "MIT OR Apache-2.0"
+readme = "README.md"
+repository = "https://github.com/jwilm/retry-after"
+documentation = "https://jwilm.github.io/retry-after/retry_after/"
 
 [dependencies.chrono]
 version = "0.2.21"
@@ -11,4 +16,4 @@ version = "0.7"
 default-features = false
 
 [dev-dependencies]
-httparse = "*"
+httparse = "1.1"
