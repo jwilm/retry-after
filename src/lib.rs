@@ -65,6 +65,14 @@ impl TryFrom<HeaderValue> for RetryAfter {
     type Error = FromHeaderValueError;
 
     fn try_from(header_value: HeaderValue) -> Result<Self, Self::Error> {
+        Self::try_from(&header_value)
+    }
+}
+
+impl TryFrom<&HeaderValue> for RetryAfter {
+    type Error = FromHeaderValueError;
+
+    fn try_from(header_value: &HeaderValue) -> Result<Self, Self::Error> {
         if header_value.len() == 0 {
             return Err(FromHeaderValueError::InsufficientBytes);
         }
