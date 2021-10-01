@@ -1,25 +1,21 @@
-extern crate chrono;
-extern crate hyper;
-extern crate retry_after;
+use std::time::{Duration, SystemTime};
 
-use chrono::{Duration, UTC};
-use hyper::header::Headers;
-use retry_after::RetryAfter;
+use retry_after::{self, RetryAfter};
+use http::header::HeaderMap;
 
 fn retry_after_delay() {
-    let mut headers = Headers::new();
-    headers.set(RetryAfter::Delay(Duration::seconds(300)));
+    let mut headers = HeaderMap::new();
+    headers.insert(retry_after::HEADER_NAME, RetryAfter::Delay(Duration::from_secs(300)).into());
 
-    // Should print "Retry-After: 300"
-    println!("{}", headers);
+    println!("{:?}", headers);
 }
 
 fn retry_after_datetime() {
-    let mut headers = Headers::new();
-    headers.set(RetryAfter::DateTime(UTC::now() + Duration::seconds(300)));
+    let mut headers = HeaderMap::new();
+    let retry_after = RetryAfter::DateTime(SystemTime::now() + Duration::from_secs(300)).into();
+    headers.insert(retry_after::HEADER_NAME, retry_after);
 
-    // Should print "Retry-After: ..."
-    println!("{}", headers);
+    println!("{:?}", headers);
 }
 
 fn main() {
