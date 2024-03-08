@@ -1,6 +1,6 @@
 [package]
 name = "retry-after"
-version = "0.3.1"
+version = "0.4.0"
 authors = ["Joe Wilm <joe@jwilm.com>"]
 description = "Retry-After header for Hyper's header module"
 license = "MIT OR Apache-2.0"
@@ -11,5 +11,5 @@ edition = "2018"
 
 [dependencies]
 chrono = "0.4"
-http = "0.2"
+http = "1"
 thiserror = "1"
